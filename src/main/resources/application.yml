@@ -1,0 +1,53 @@
+spring:
+  profiles:
+    active: "prod"
+---
+spring:
+  profiles: dev
+  web_service_accesskeys: 40778b756f90d97ffcff28b81e18de805a70ae4ef4084bd6c9126d0b63332ced
+  datasource:
+    url: jdbc:oracle:thin:@autodev:1521:autodev
+    username: fordkeycode_prod
+    password: fkcpd_2012
+    driver:
+      class: oracle.jdbc.driver.OracleDriver
+
+  oauth2:
+    url: https://corpqa.sts.ford.com/adfs/oauth2/token
+    resource: urn:archwayvehicleownership:resource:api_archwayvo:qa
+    client-id: 30caedac-c5f6-8bf6-9500-03dd7f11341f
+    client-secret: k5ABXcrso4rkfDO37ZHD7OiLmvrAtEIgPfFCv03O
+
+  logging:
+    level:
+      org.springframework: ERROR
+      com.archway: DEBUG
+      org.hibernate: ERROR
+    pattern:
+      console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
+---
+spring:
+  profiles: prod
+  web_service_accesskeys: 68c62a0ee9dbba54798d68219f6999c38c87f4edd20b6c1c1f3e25bb04af86f8
+  datasource:
+    url: jdbc:oracle:thin:@auto:1521:auto
+    username: FORDKEYCODE_PROD
+    password: fkcpd_2012
+    driver:
+      class: oracle.jdbc.driver.OracleDriver
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+
+  oauth2:
+    url: https://corp.sts.ford.com/adfs/oauth2/token
+    resource: urn:archwayvehicleownership:resource:api_archwayvo:prod
+    client-id: c62a1b2c-dcec-096c-aa73-1df7b209e79e
+    client-secret: dv_sFweTLFFcUArTuAGFG3vMDeEFT6_-x4_tqESb
+
+  logging:
+    level:
+      org.springframework: ERROR
+      com.archway: DEBUG
+      org.hibernate: ERROR
+    pattern:
+      console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
