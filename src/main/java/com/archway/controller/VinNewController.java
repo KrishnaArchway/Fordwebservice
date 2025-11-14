@@ -42,9 +42,9 @@ public class VinNewController {
     String methodName = "VinNewController.java validateVinNewVehicle(VinRequestEntity)";
     log.info("Entering ::: {}", methodName);
     VinResponseEntity vre = new VinResponseEntity();
-    String key = vinRequestEntity.getKey();
-    String pacode = vinRequestEntity.getPaCode();
-    String vin = vinRequestEntity.getVin();
+    String key = vinRequestEntity.getKey().trim();
+    String pacode = vinRequestEntity.getPaCode().trim();
+    String vin = vinRequestEntity.getVin().trim();
     if (!this.tokenHelper.verifyToken(requestTokenHeader)) {
       vre.setErrorCode("4001");
       vre.setErrorMessage("Invalid/Expired Token");

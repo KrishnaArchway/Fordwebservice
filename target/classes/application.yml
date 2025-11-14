@@ -30,9 +30,9 @@ spring:
   profiles: prod
   web_service_accesskeys: 68c62a0ee9dbba54798d68219f6999c38c87f4edd20b6c1c1f3e25bb04af86f8
   datasource:
-    url: jdbc:oracle:thin:@auto:1521:auto
+    url: jdbc:oracle:thin:@158.60.185.125:1521:auto
     username: FORDKEYCODE_PROD
-    password: fkcpp_2012
+    password: fkcpd_2012
     driver:
       class: oracle.jdbc.driver.OracleDriver
   jpa:

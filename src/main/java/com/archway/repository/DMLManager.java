@@ -23,6 +23,7 @@ public class DMLManager {
     String sql = "{call keycode_pkg.New_Authentification_request(?,?,?,?,?)}";
     try {
       log.warn("vin \t\t:  {} ,  pacode : {}", vin, pacode);
+      log.warn("Length of vin "  + vin.length());
       Connection conn = this.jdbcTemplate.getDataSource().getConnection();
       try {
         CallableStatement cstmt = conn.prepareCall(sql);
@@ -58,6 +59,7 @@ public class DMLManager {
     String sql = "{call keycode_pkg.Authentification_request(?,?,?,?,?)}";
     try {
       log.warn("vin \t\t:  {} ,  pacode : {}", vin, pacode);
+        log.warn("Length of vin "  + vin.length());
       Connection conn = this.jdbcTemplate.getDataSource().getConnection();
       try {
         CallableStatement cstmt = conn.prepareCall(sql);
